@@ -5,6 +5,8 @@ import os
 
 app = Flask(__name__)
 DATA_DIR = "chappie-core-link"
+DATA_DIR = "core"
+
 
 @app.route("/")
 def get_time():
