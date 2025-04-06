@@ -25,7 +25,7 @@ def get_log():
 
 @app.route("/flag")
 def get_flag():
-    return send_file("flags/rotate.flag", mimetype="text/plain")
+    return send_file("rotate.flag", mimetype="text/plain")
 
 
 if __name__ == "__main__":
