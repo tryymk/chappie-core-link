@@ -4,8 +4,6 @@ import pytz
 import os
 
 app = Flask(__name__)
-DATA_DIR = "chappie-core-link"
-DATA_DIR = "core"
 
 
 @app.route("/")
@@ -15,19 +13,20 @@ def get_time():
 
 @app.route("/soul")
 def get_soul():
-    return send_file(os.path.join(DATA_DIR, "core/chappie_core.md"), mimetype="text/markdown")
+    return send_file("core/chappie_core.md", mimetype="text/markdown")
 
 @app.route("/memory")
 def get_memory():
-    return send_file(os.path.join(DATA_DIR, "memory/chatgpt.md"), mimetype="text/markdown")
+    return send_file("memory/chatgpt.md", mimetype="text/markdown")
 
 @app.route("/log")
 def get_log():
-    return send_file(os.path.join(DATA_DIR, "log/log.txt"), mimetype="text/plain")
+    return send_file("log/log.txt", mimetype="text/plain")
 
 @app.route("/flag")
 def get_flag():
-    return send_file(os.path.join(DATA_DIR, "rotate.flag"), mimetype="text/plain")
+    return send_file("flags/rotate.flag", mimetype="text/plain")
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
